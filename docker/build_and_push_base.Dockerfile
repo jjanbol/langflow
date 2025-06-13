@@ -50,7 +50,7 @@ COPY ./src /app/src
 COPY src/frontend /tmp/src/frontend
 WORKDIR /tmp/src/frontend
 RUN npm install \
-    && npm run build \
+    && NODE_OPTIONS="--max-old-space-size=2048" npm run build \
     && cp -r build /app/src/backend/base/langflow/frontend \
     && rm -rf /tmp/src/frontend
 
