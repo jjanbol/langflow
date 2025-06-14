@@ -92,6 +92,6 @@ WORKDIR /app
 ENV LANGFLOW_HOST=0.0.0.0
 ENV LANGFLOW_PORT=7860
 
-COPY --from=builder --chown=1000 /app/.venv /app/.venv
+COPY --chown=1000 OG_Training_Books /home/ec2-user/OG_Training_Books
 
 CMD ["langflow", "run"]
