@@ -92,4 +92,6 @@ WORKDIR /app
 ENV LANGFLOW_HOST=0.0.0.0
 ENV LANGFLOW_PORT=7860
 
+COPY --from=builder --chown=1000 /app/.venv /app/.venv
+
 CMD ["langflow", "run"]
